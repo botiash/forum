@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/signup.css">
+    <title>SIGN UP</title>
+</head>
+<body>
+   
+
+    <div class="box darkgreen">
+        <h1>SIGN UP</h1>
+        <form method="POST" action="/signup">
+            <div class="form__group">
+                <label>e-mail</label><br>
+                <input type="email" name="email" />
+            </div>
+            <div class="form__group">
+                <label>username</label><br>
+                <input type="text" name="username"/>
+            </div>
+            <div class="form__group">
+                <label>password</label><br>
+                <input type="password" name="password"/><br><br>
+                <div id="passwordHelpBlock" class="form-text">
+                    Your password must be 8-20 characters long and consist of at least:1 lower case letter, 1 upper case letter, 1 number, 1 special symbol.
+                </div>
+                </div> 
+                <div class="form__group">
+                    <label>repeat password</label><br>
+                    <input type="password" name="password1"/><br><br>
+                    </div> 
+                <div class="form__group">
+                    <input type="submit" value="sign-up"/>
+                </div>
+                    
+        </form>
+    </div>
+    <img class="bg l" src="https://www.kindpng.com/picc/m/305-3055177_anime-flowers-png-transparent-png.png" alt="">
+    <img class="bg r" src="https://www.kindpng.com/picc/m/305-3055177_anime-flowers-png-transparent-png.png" alt="">
+        
+            
+</body>
+</html>

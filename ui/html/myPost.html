@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My liked post</title>
+  <link rel="stylesheet" href="../static/myLikedPost.css">
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <div class="navbar">
+        <div class="nav_home">
+          <a href="/">Home </a>
+        </div>
+
+        {{if .User.IsAuth}}
+        <div class="right_menu">
+
+          <div class="nav_link">
+            <a class="username">{{.Username}}</a>
+          </div>
+
+          <div class="nav_link">
+            <a href="/post/myLikedPost">My Liked Posts</a>
+          </div>
+          <div class="nav_link">
+            <a href="/post/myPost">My Posts</a>
+          </div>
+
+          <div class="nav_link">
+            <a href="/post/create">Create Post</a>
+          </div>
+
+          <div class="nav_link">
+            <a href="/logout">Logout</a>
+          </div>
+           {{else}}
+
+          <div class="nav_link">
+            <a href="/signin">SignIn</a>
+          </div> 
+          <div class="nav_link"></div>
+            <a href="/signup">SignUp</a>
+          </div> 
+
+            {{end}}
+        </div>
+
+      </div>
+
+    </div>
+  </header>
+  <main>
+    {{range .Posts}}
+    <div class="container">
+      <div class="post">
+         <a href="/post/?id={{.Id}}">        </a> 
+        <div class="post__header">
+          <p>{{.Author}}</p>
+          <a href="/post/?id={{.Id}}" class="title">{{.Title}}</a>
+        </div>
+        <p class="description">{{.Description}}</p>
+
+      </div>
+    </div>
+
+    {{end}}
+  </main>
+
+  <!-- <img class="bg l2" src="https://www.kindpng.com/picc/m/305-3055177_anime-flowers-png-transparent-png.png" alt=""> -->
+
+</body>
+
+</html>

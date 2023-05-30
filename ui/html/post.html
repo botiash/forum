@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{{ .Post.Title }}</title>
+	<meta charset="UTF-8">
+	{{ $IsAuth := .User.IsAuth }}
+	{{ $PostID := .Post.Id }}
+	<link rel="stylesheet" href="../static/post.css">
+
+
+	
+</head>
+<body>
+    <header>
+		<div class="container">
+			<div class="navbar">
+			  <div class="nav_home">
+				<a href="/">Home </a>
+			  </div> 
+			  
+			  {{if .User.IsAuth}}
+			  <div class="right_menu">
+	
+				<div class="nav_link">
+				  <a class="username">{{.Username}}</a>
+				</div>     
+				
+				<div class="nav_link">
+				<a href="/post/myLikedPost">My Liked Posts</a>
+				</div>
+				<div class="nav_link">
+				<a href="/post/myPost">My Posts</a>
+				</div>
+	  
+				<div class="nav_link">
+				<a href="/post/create">Create Post</a>
+				</div>
+	  
+				<div class="nav_link">
+				  <a href="/logout">Logout</a>
+				</div>
+				 {{else}}
+	  
+				<div class="nav_link">
+				  <a href="/signin">SignIn</a>
+				</div> 
+				<div class="nav_link"></div>
+				  <a href="/signup">SignUp</a>
+				</div> 
+	  
+				  {{end}}
+			  </div>
+	
+			</div>
+	
+		  </div>
+	  </header>
+	<div class="container">
+	<div class="post">
+		<h1>{{ .Post.Title }}</h1>
+		<p>{{ .Post.Description }}</p>
+		<p>Author: {{ .Post.Author }}</p>
+		<p>Likes: {{ .Post.Likes }}, Dislikes: {{ .Post.Dislikes }}</p>
+		{{if .User.IsAuth}}
+
+		<form action="/emotion/post/?id={{.Post.Id}}" method="post">
+			<button type="submit" value="like" name="islike">LIKE</button>
+			<button type="submit" value="dislike" name="islike">DISLIKE</button>
+		</form>
+		{{ end }}
+
+	</div>
+	<div class="emotion">
+		{{if .User.IsAuth}}
+    	
+		<form action="/post/?id={{.Post.Id}}" method="post">
+			<input class="comment_text" type="text"  id="text" name="text" maxlength="100">
+			<input type="submit" value="COMMENT">
+		</form>
+		{{ end }}
+		
+	</div>
+	
+ 
+	<div class="comments">
+		<h2>Comments</h2>
+	{{ if .Comment }}
+		<ul>
+			{{ range .Comment }}
+				<li>
+				<h3>{{ .Creator }}</h3>
+				<p style="display:flex; overflow:scroll; padding:5px;">{{ .Text }}</p>
+				<p>Likes: {{ .Likes }}, Dislikes: {{ .Dislikes }}</p>
+				<p>Created at: {{ .Created_at }}</p>
+                	{{ if $IsAuth}}
+                    	<form action="/emotion/comment/?id={{.Id}}&postid={{$PostID}}" method="post">
+                        	<button type="submit" value="like" name="islike">LIKE</button>
+							<button type="submit" value="dislike" name="islike">DISLIKE</button>
+						</form>
+
+                	{{ end }}
+				</li>
+			{{ end }}
+		</ul>
+	{{ else }}
+		<p>No comments yet.</p>
+	{{ end }}
+	</div>
+	<img class="flowers one1" src="https://png.pngtree.com/png-clipart/20221006/ourmid/pngtree-aesthetic-flower-decoration-png-image_6289296.png" alt="">
+      <img class="flowers two2" src="https://png.pngtree.com/png-clipart/20221006/ourmid/pngtree-aesthetic-flower-decoration-png-image_6289296.png" alt="">
+      <img class="flowers three3" src="https://png.pngtree.com/png-clipart/20221006/ourmid/pngtree-aesthetic-flower-decoration-png-image_6289296.png" alt="">
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Forum</title>
+    <link rel="stylesheet" href="../static/style.css">
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="navbar">
+          <div class="nav_home">
+            <a href="/">Home </a>
+          </div> 
+          
+          {{if .User.IsAuth}}
+          <div class="right_menu">
+
+            <div class="nav_link">
+              <a class="username">{{.Username}}</a>
+            </div>     
+            
+            <div class="nav_link">
+            <a href="/post/myLikedPost">My Liked Posts</a>
+            </div>
+            <div class="nav_link">
+            <a href="/post/myPost">My Posts</a>
+            </div>
+  
+            <div class="nav_link">
+            <a href="/post/create">Create Post</a>
+            </div>
+  
+            <div class="nav_link">
+              <a href="/logout">Logout</a>
+            </div>
+             {{else}}
+  
+            <div class="nav_link">
+              <a href="/signin">Sign In</a>
+            <div style="margin-left:10px ;">
+              <a href="/signup">Sign Up</a>
+            </div>
+            </div> 
+  
+              {{end}}
+          </div>
+
+        </div>
+
+          
+          <!-- {{range .Category}}
+          <a href="/?category={{.}}">{{.}}</a>
+          {{end}} -->
+
+      </div>
+    </header>
+    <div class="container">
+
+    
+      <div class="scroll-container">
+              {{range .Category}}
+          <a href="/?category={{.}}">{{.}}</a>
+          {{end}}
+      </div>
+    </div>
+
+    <main>
+      {{range .Posts}}
+      <div class="container">
+        <div class="post">
+          <!-- <a href="/post/?id={{.Id}}">        </a> -->
+          <div class="post__header">
+            <p>{{.Author}}</p>
+            <a href="/post/?id={{.Id}}" class="title">{{.Title}}</a>
+          </div>
+          <p class="description">{{.Description}}</p>
+          <div class="category">
+            <p>Category: </p>
+            {{range .Category}}
+            {{.}}
+            {{end}}
+          </div>
+        </div>
+      </div>
+      
+      {{end}}
+    </main>
+  </body>
+</html>

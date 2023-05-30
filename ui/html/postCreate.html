@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create post</title>
+    <link rel="stylesheet" href="../static/postcreate.css">
+
+</head>
+
+<body>
+    <!-- <h1>Create post</h1>
+    <form method="POST" action="/post/create">
+        <label>post</label><br>
+        <input type="text" name="title" /><br><br>
+        <label>description</label><br>
+        <input type="text" name="description"/><br><br>
+        <label>category</label><br>
+        <input type="text" name="category"/><br><br>
+        <a id="add-category">Add Category</a><br><br>
+        <input type="submit" value="create"/>
+    </form> -->
+
+
+
+    <div class="box pink">
+        <h1>Create post</h1>
+        <form method="POST" action="/post/create">
+            <div class="form__group">
+                <label>Title</label><br>
+                <input type="text" name="title" />
+            </div>
+            <div class="form__group">
+                <label>Description</label>
+                <textarea class="comment-textarea" name="description" maxlength="100"></textarea>
+            </div>
+            <div class="form__group">
+                <label>Category</label>
+                <input type="text" name="category" />
+            </div>
+            <a id="add-category">Add Category</a>
+            <div class="form__group">
+                <input type="submit" value="CREATE" />
+            </div>
+        </form>
+    </div>
+    <img class="bg l" src="https://www.kindpng.com/picc/m/305-3055177_anime-flowers-png-transparent-png.png" alt="">
+    <img class="bg r" src="https://www.kindpng.com/picc/m/305-3055177_anime-flowers-png-transparent-png.png" alt="">
+
+
+</body>
+<script>
+    const addCategoryButton = document.querySelector("#add-category")
+
+
+
+    //   const submitButton = document.querySelector('input[type="submit"]');
+    addCategoryButton.addEventListener('click', () => {
+        const form = document.querySelector('form');
+        const categoryInput = document.createElement('input');
+        categoryInput.setAttribute('type', 'text');
+        categoryInput.setAttribute('name', 'category');
+        const categoryLabel = document.createElement('label');
+        categoryLabel.innerHTML = 'category';
+        categoryLabel.setAttribute('for', 'category');
+        var break1 = document.createElement('br');
+
+        var break2 = document.createElement('br');
+        var break3 = document.createElement('br');
+        form.insertBefore(categoryLabel, addCategoryButton);
+        form.insertBefore(break1, addCategoryButton);
+        form.insertBefore(categoryInput, addCategoryButton);
+        form.insertBefore(break2, addCategoryButton);
+        form.insertBefore(break3, addCategoryButton);
+    });
+</script>
+
+</html>

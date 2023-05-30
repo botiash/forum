@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=DynaPuff:wght@400;500&display=swap');
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+    color: black;      
+    font-family: 'DynaPuff', cursive;
+}
+.container{
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto;
+}
+a{
+    text-decoration: none;
+    color:#bb8a81;
+}
+body{
+    padding-top: 40px;
+}
+.error{
+    display: flex;
+    margin: 0 auto;
+    flex-direction: column;
+    width: 600px;
+}
+.error_text{
+    display: flex;
+    margin: 0 auto;
+    margin-top: 20px;
+ max-width: 600px;
+ text-align: center;
+ font-size: 40px;
+ margin-top: 10px;
+}
+
+.flo{
+    display: flex;
+}
+.images{
+    margin: 0 auto;
+}
+.error_oops,.error_status,.error_link{
+    padding-top: 10px;
+    margin: 0 auto;
+}
+.error_status{
+
+ font-size: 60px;
+}
+
+@media screen and (max-width:600px) {
+    
+    .error{
+        width: 280px;
+
+    }
+    .error_status{
+        font-size: 30px;
+    }
+    .error_text{
+        font-size: 20px;
+    }
+}

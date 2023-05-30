@@ -1,0 +1,388 @@
+@import url('https://fonts.googleapis.com/css2?family=DynaPuff:wght@400;500&display=swap');
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+    color: black;
+}
+
+header {
+    background: #9DC08B;
+    padding: 20px 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+* {
+    font-family: 'DynaPuff', cursive;
+}
+
+.post {
+    background: #FFFFE8;
+    /* border-radius: 20px; */
+    padding: 10px;
+    background-color: #ec9b9b69;
+
+    border: 2px solid #EEB1B1;
+
+    margin-bottom: 30px;
+    max-width: 1200px;
+}
+
+.post h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #bf6a6a;
+}
+
+.post p {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    color: #179743;
+}
+
+.post p:last-child {
+    margin-bottom: 0;
+}
+
+.post p:not(:last-child)::after {
+    margin: 0 10px;
+    color: #AAA;
+}
+
+
+.post p:nth-last-child(2)::after {
+    margin: 0 10px;
+    color: #AAA;
+}
+
+.emotion {
+    margin-top: 20px;
+    padding: 10px;
+
+}
+
+.emotion form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.emotion button {
+    background-color: #d292b5;
+    color: whitesmoke;
+    border: 1px solid #CCC;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.emotion button:hover {
+    background-color: #333;
+    color: #FFF;
+}
+
+.emotion hr {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-top: 1px solid #CCC;
+}
+
+.emotion label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    color: #238c1f;
+}
+
+.emotion textarea {
+    width: 100%;
+    height: 100px;
+    padding: 5px;
+    border: 1px solid #CCC;
+    border-radius: 5px;
+    resize: none;
+}
+
+.emotion input[type="submit"] {
+    background-color: #18713b;
+    color: #E1D4D4;
+    border: none;
+    /* border-radius: 5px; */
+    padding: 4px 10px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    /* margin-left: 10px; */
+    height: 24px;
+}
+
+.emotion input[type="submit"]:hover {
+    background-color: #FFF;
+    color: #333;
+    /* border: 1px solid #333; */
+}
+
+.comments {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #F8F8F8;
+    border: 1px solid #CCC;
+    /* border-radius: 5px; */
+}
+
+.comments h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    color: #249153;
+}
+
+.comments ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.comments li {
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #DFB7B7;
+    border: 1px solid #000;
+    /* border-radius: 5px; */
+}
+
+.comments h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.comments p {
+    margin: 0;
+}
+
+.comments hr {
+    margin: 10px 0;
+    border: none;
+    border-top: 1px solid #CCC;
+}
+
+.comments form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.post button {
+    background-color: #D28888;
+    color: whitesmoke;
+
+    border-style: none;
+    /* border-radius: 5px; */
+    padding: 5px 10px;
+    width: 68px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.post button:hover {
+    background-color: #333;
+    color: #FFF;
+}
+
+.post form {
+    display: flex;
+    justify-content: center;
+
+}
+
+.comments button:hover {
+    background-color: #333;
+    color: #FFF;
+}
+
+.comments label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.comments textarea {
+    width: 100%;
+    height: 100px;
+    padding: 5px;
+    border: 1px solid #CCC;
+    border-radius: 5px;
+    resize: none;
+}
+
+.comments input[type="submit"] {
+    background-color: #333;
+    color: #FFF;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.comments input[type="submit"]:hover {
+    background-color: #FFF;
+    color: #333;
+    border: 1px solid #333;
+}
+
+.flower {
+
+    position: fixed;
+
+    max-width: 100px;
+    bottom: 0;
+
+}
+
+.images {
+    /* justify-content: space-between;
+     */
+    width: 100px;
+    height: 100px;
+    margin: 0 10px;
+}
+
+a {
+    text-decoration: none;
+    color: #FFFFE8;
+}
+
+.navbar {
+    display: flex;
+    justify-content: end;
+    font-size: 20px;
+}
+
+.nav_link {
+    display: flex;
+    margin-right: 20px;
+}
+
+@media screen and (max-width:670px) {
+    .navbar {
+        display: flex;
+        justify-content: end;
+        margin: 0 auto;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+    .nav_link {
+        margin: 0 auto;
+    }
+}
+
+.container {
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.comment_text {
+    /* border-style: none; */
+    height: 24px;
+    width: 400px;
+    /* border-radius: 5px; */
+    border-style: none;
+    background-color: #9dc08b;
+    color: whitesmoke
+}
+
+.comment_text:active {
+    /* border-style: none; */
+    height: 24px;
+    width: 400px;
+    /* border-radius: 5px; */
+    border-style: none;
+    background-color: #9dc08b;
+    color: whitesmoke
+}
+
+.comments button {
+    background-color: #D28888;
+    color: whitesmoke;
+
+    border-style: none;
+    /* border-radius: 5px; */
+    padding: 5px 10px;
+    width: 68px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.comments button:hover {
+    background-color: #333;
+    color: #FFF;
+}
+
+.comments form {
+    display: flex;
+    justify-content: center;
+
+}
+
+.flo {
+    display: flex;
+    justify-content: end;
+    justify-content: center;
+}
+.nav_link{
+    display: flex;
+    margin-right: 20px;
+}
+.navbar{
+    display: flex; 
+    justify-content: space-between;
+    font-size: 20px;
+
+}
+.right_menu{
+    display: flex;
+    flex-direction: row;
+}
+a{
+    text-decoration: none;
+    color:#FFFFE8;
+}
+@media screen and (max-width:670px) {
+    .navbar{
+        display: flex;
+        flex-direction: column;
+    }
+    .nav_home{
+        margin: 0 auto;
+    }
+    .right_menu{
+        display: flex; 
+        justify-content: end;
+        margin: 0 auto;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    .nav_link{
+        margin: 0 auto;
+    }
+}
